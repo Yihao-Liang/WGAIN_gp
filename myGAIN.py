@@ -209,7 +209,7 @@ def gain(data_x):
 
 if __name__ == '__main__':
     use_gpu = torch.cuda.is_available()
-    data_name = 'spam'
+    # data_name = 'spam'
     miss_rate = 0.2
     batch_size = 128
     hint_rate = 0.9

@@ -1,5 +1,5 @@
 # myGAIN
-# This is a improvement of GAIN based on WGAN_gp(Wasserstein GAN with gradient penalty).
+# This is an improvement of GAIN based on WGAN_gp(Wasserstein GAN with gradient penalty).
 # Written by Yihao Liang
 # Date: Sep 22nd 2022
 # Reference:
@@ -109,7 +109,7 @@ def WGAIN_gp(data):
         inputs = x
         D_h1 = F.relu(torch.matmul(inputs, D_W1) + D_b1)
         D_h2 = F.relu(torch.matmul(D_h1, D_W2) + D_b2)
-        D_prob = torch.matmul(D_h1, D_W2) + D_b2    # don't use any activation function
+        D_prob = torch.matmul(D_h2, D_W3) + D_b2    # don't use any activation function
         return D_prob
 
     # GAIN Loss
@@ -179,8 +179,6 @@ def WGAIN_gp(data):
         if it % (iterations/10) == 0:
             tqdm.write(f"Iteration: {it}; "
                        f"MSE_loss: { MSE_loss_curr:.4}")
-            # tqdm.write(f"Iteration: {it}; "
-            #        f"D loss: {D_loss_curr:.4}; G_loss: {G_loss_curr:.4}; MSE_loss: {MSE_loss_curr:.4}")
 
     # impute data
     Z_all = data_mask * data_miss + (1 - data_mask) * sample_Z(no, m_dim)
