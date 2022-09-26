@@ -219,13 +219,13 @@ if __name__ == '__main__':
     
     # Importing Dataset
     # %% spam
-    file_name = 'spam.csv'
+    file_name = 'data/spam.csv'
     data_x = pd.read_csv(file_name)
     data_y = data_x['spam'].values
     data_x = data_x.drop('spam', axis=1).values
 
     # %% breast
-    # file_name = 'breast.csv'
+    # file_name = 'data/breast.csv'
     # data_x = pd.read_csv(file_name)
     # class_mapping = {'M': 0, 'B': 1}
     # data_x['Diagnosis'] = data_x['Diagnosis'].map(class_mapping)
@@ -233,7 +233,7 @@ if __name__ == '__main__':
     # data_x = data_x.drop('Diagnosis', axis=1).values
 
     # %% credit
-    # file_name = 'credit.csv'
+    # file_name = 'data/credit.csv'
     # data_x = pd.read_csv(file_name)
     # data_y = data_x['def. pay. n. m.'].values
     # data_x = data_x.drop('def. pay. n. m.', axis=1).values
@@ -241,7 +241,7 @@ if __name__ == '__main__':
     # data_y = data_y.astype(np.float64)
 
     # %% letter
-    # file_name = 'letter.csv'
+    # file_name = 'data/letter.csv'
     # data_x = pd.read_csv(file_name)
     # data_y = data_x['letter'].values
     # data_x = data_x.drop('letter', axis=1).values
@@ -251,7 +251,7 @@ if __name__ == '__main__':
 
 
     # %% news
-    # file_name = 'news.csv'
+    # file_name = 'data/news.csv'
     # data_x = pd.read_csv(file_name)
     # data_y = data_x['data_channel_is_world'].values
     # data_x = data_x.drop('data_channel_is_world', axis=1).values
